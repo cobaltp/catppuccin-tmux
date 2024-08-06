@@ -86,6 +86,7 @@ main() {
   add_tmux_batch_option "@catppuccin_window_status_enable"
   add_tmux_batch_option "@catppuccin_status_left_separator"
   add_tmux_batch_option "@catppuccin_status_right_separator"
+  add_tmux_batch_option "@catppuccin_status_middle_separator"
   add_tmux_batch_option "@catppuccin_status_connect_separator"
   add_tmux_batch_option "@catppuccin_status_fill"
   add_tmux_batch_option "@catppuccin_status_modules_left"
@@ -177,11 +178,11 @@ main() {
   setw window-status-current-format "$(do_color_interpolation "$window_current_format")"
 
   # status module
-  local status_left_separator status_right_separator status_connect_separator \
+  local status_left_separator status_right_separator status_middle_separator status_connect_separator \
     status_fill status_modules_left status_modules_right
   status_left_separator=$(get_tmux_batch_option "@catppuccin_status_left_separator" "")
   status_right_separator=$(get_tmux_batch_option "@catppuccin_status_right_separator" "█")
-  status_middle_separator=$(get_tmux_batch_option "@catppuccin_status_middle_separator" "█")
+  status_middle_separator=$(get_tmux_batch_option "@catppuccin_status_middle_separator" " ")
   status_connect_separator=$(get_tmux_batch_option "@catppuccin_status_connect_separator" "yes")
   status_fill=$(get_tmux_batch_option "@catppuccin_status_fill" "icon")
 
